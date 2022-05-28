@@ -22,7 +22,7 @@ def get_video(url):
     print('downloading '+filename+'....')
 
     r= requests.get(mp4_file)
-    with open(filename+".mp4", 'wb') as mp4:
+    with open("videos/"+filename+".mp4", 'wb') as mp4:
         mp4.write(r.content)
     
     print(filename+" downloaded !")
