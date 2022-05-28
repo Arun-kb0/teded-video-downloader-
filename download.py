@@ -4,7 +4,7 @@ import re
 from bs4 import BeautifulSoup
 
 def get_video(url):
-    
+    '''processing data'''
     print("processing....")
 
     lst=url.split('/')
@@ -19,6 +19,7 @@ def get_video(url):
             tmp1= re.search(r':\\.(.*)',tmp.group(0))
             mp4_file= tmp1.group(1)
 
+    '''downloading video'''
     print('downloading '+filename+'....')
 
     r= requests.get(mp4_file)
@@ -32,7 +33,7 @@ def get_video(url):
 if __name__ == "__main__":
     
     #url="https://www.ted.com/talks/anees_bahji_why_are_eating_disorders_so_hard_to_treat"
-    url="https://www.ted.com/talks/katherine_maher_wikipedia_s_enduring_nuanced_perspective_on_truth"
+    #url="https://www.ted.com/talks/katherine_maher_wikipedia_s_enduring_nuanced_perspective_on_truth"
 
     url=str(input("enter teded video url : "))
 
